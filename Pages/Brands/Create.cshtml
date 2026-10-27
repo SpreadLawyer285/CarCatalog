@@ -1,0 +1,18 @@
+@page
+@model CarCatalog.Pages.Brands.CreateModel
+@{ ViewData["Title"] = "Új márka"; }
+<h1>Új márka</h1>
+<form method="post" class="col-md-5">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="Item.Name" class="form-label"></label>
+        <input asp-for="Item.Name" class="form-control" />
+        <span asp-validation-for="Item.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Item.Country" class="form-label"></label>
+        <input asp-for="Item.Country" class="form-control" />
+    </div>
+    <button class="btn btn-success">Mentés</button>
+    <a class="btn btn-link" asp-page="Index">Vissza</a>
+</form>

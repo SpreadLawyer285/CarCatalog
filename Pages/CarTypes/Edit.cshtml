@@ -1,0 +1,23 @@
+@page "{id:int}"
+@model CarCatalog.Pages.CarTypes.EditModel
+@{ ViewData["Title"] = "Típus szerkesztése"; }
+<h1>Típus szerkesztése</h1>
+<form method="post" class="col-md-5">
+    <input type="hidden" asp-for="Item.Id" />
+    <div class="mb-3">
+        <label asp-for="Item.BrandId" class="form-label"></label>
+        <select asp-for="Item.BrandId" asp-items="Model.Brands" class="form-select"></select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Item.Name" class="form-label"></label>
+        <input asp-for="Item.Name" class="form-control" />
+        <span asp-validation-for="Item.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Item.Year" class="form-label"></label>
+        <input asp-for="Item.Year" class="form-control" />
+        <span asp-validation-for="Item.Year" class="text-danger"></span>
+    </div>
+    <button class="btn btn-primary">Mentés</button>
+    <a class="btn btn-link" asp-page="Index">Vissza</a>
+</form>

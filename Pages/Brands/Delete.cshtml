@@ -1,0 +1,13 @@
+@page "{id:int}"
+@model CarCatalog.Pages.Brands.DeleteModel
+@{ ViewData["Title"] = "Márka törlése"; }
+<h1>Márka törlése</h1>
+<p>Biztosan törli a(z) <strong>@Model.Item.Name</strong> márkát?</p>
+@if (Model.Item.CarTypes.Any())
+{
+    <div class="alert alert-warning">A márkához tartozó @Model.Item.CarTypes.Count típus is törlődni fog!</div>
+}
+<form method="post">
+    <button class="btn btn-danger">Törlés</button>
+    <a class="btn btn-link" asp-page="Index">Mégse</a>
+</form>

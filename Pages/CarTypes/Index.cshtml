@@ -1,0 +1,20 @@
+@page
+@model CarCatalog.Pages.CarTypes.IndexModel
+@{ ViewData["Title"] = "Típusok"; }
+<h1>Típusok</h1>
+<p><a class="btn btn-success" asp-page="Create">Új típus</a></p>
+<table class="table table-striped">
+    <thead><tr><th>Márka</th><th>Típus</th><th>Gyártás kezdete</th><th></th></tr></thead>
+    <tbody>
+    @foreach (var t in Model.Items)
+    {
+        <tr>
+            <td>@t.Brand?.Name</td><td>@t.Name</td><td>@t.Year</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-primary" asp-page="Edit" asp-route-id="@t.Id">Szerkesztés</a>
+                <a class="btn btn-sm btn-danger" asp-page="Delete" asp-route-id="@t.Id">Törlés</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+@page "{id:int}"
+@model CarCatalog.Pages.CarTypes.DeleteModel
+@{ ViewData["Title"] = "Típus törlése"; }
+<h1>Típus törlése</h1>
+<p>Biztosan törli: <strong>@Model.Item.Brand?.Name @Model.Item.Name</strong>?</p>
+<form method="post">
+    <button class="btn btn-danger">Törlés</button>
+    <a class="btn btn-link" asp-page="Index">Mégse</a>
+</form>
